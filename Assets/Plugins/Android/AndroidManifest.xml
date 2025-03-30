@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.unity3d.player">
+
+  <application
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme">
+    <!--
+    
+ <action android:name="android.intent.action.MAIN"> 表示这是应用的主入口点。
+<category android:name="android.intent.category.LAUNCHER"> 表示该 Activity 是应用的启动器。
+将PrivacyActivity,设置为第一个启动的，当用户同意隐私协议后，才可以进入unity
+        -->
+    <activity
+        android:name="com.unity3d.player.PrivacyActivity"
+        android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+
+    <activity
+        android:name="com.unity3d.player.UnityPlayerActivity"
+        android:exported="true">
+      <meta-data
+          android:name="unityplayer.UnityActivity"
+          android:value="true" />
+    </activity>
+
+  </application>
+</manifest>
